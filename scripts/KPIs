@@ -1,0 +1,28 @@
+/* KPIs - Key Performance Indicators 
+for our pizza business
+(Total Revenue, Average Order Value, Total Pizzas Sold, Total Orders, Average Pizzas Per Order) */
+
+/* Total Revenue: The sum of the total price of all pizza orders. */
+SELECT
+ROUND(SUM(total_price),0) AS total_revenue
+FROM pizza_sales
+
+/* Average Order Value: The average amount spent per oder, 
+calculated by dividing the total revenue by the total numbers of orders. */
+SELECT
+ROUND(ROUND(SUM(total_price),0) / COUNT(DISTINCT order_id),2) AS AOV
+FROM pizza_sales
+
+/* Total Pizzas Sold: The sum of the quantities of all pizzas sold. */
+SELECT
+SUM(quantity) AS total_pizzas_sold
+FROM pizza_sales
+
+/* Total Orders: The total number of orders placed. */
+SELECT COUNT(DISTINCT order_id) AS total_orders
+FROM pizza_sales
+
+/* Average Pizzas Per Order: The average number of pizzas sold per order, calculated by dividing the total number of pizzas sold by the total number of orders. */
+SELECT
+SUM(quantity) / COUNT(DISTINCT order_id) AS APO
+FROM pizza_sales
