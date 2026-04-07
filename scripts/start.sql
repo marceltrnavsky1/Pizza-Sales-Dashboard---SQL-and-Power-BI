@@ -1,4 +1,4 @@
-/* Table overview with time correction */
+/* Table overview (with time correction) */
 SELECT
 pizza_id,
 order_id,
@@ -30,3 +30,5 @@ WHERE
     OR pizza_category IS NULL
     OR pizza_ingredients IS NULL
     OR pizza_name IS NULL
+
+-- There are no NULLs.
