@@ -26,4 +26,4 @@ DATENAME(MONTH,order_date) AS order_month,
 COUNT(DISTINCT order_id) AS total_orders
 FROM pizza_sales
 GROUP BY DATENAME(MONTH,order_date)
-ORDER BY total_orders DESC
+ORDER BY DATENAME(MONTH,order_date)
