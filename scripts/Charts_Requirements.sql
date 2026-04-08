@@ -22,8 +22,12 @@ ORDER BY order_hour
 /* 2.Monthly Trend for Total Orders: Create a line chart that displays the monthly trend of total orders over a specific time period.
 This chart will allow us to identify peak months of high order activity. */
 SELECT
-DATENAME(MONTH,order_date) AS order_month,
+FORMAT(order_date, 'MMM') AS order_month,
 COUNT(DISTINCT order_id) AS total_orders
 FROM pizza_sales
-GROUP BY DATENAME(MONTH,order_date)
-ORDER BY DATENAME(MONTH,order_date)
+GROUP BY FORMAT(order_date, 'MMM'),
+	     DATEPART(MONTH,order_date)
+ORDER BY DATEPART(MONTH,order_date)
+
+/* 3.Percentage of Sales by Pizza Category: Create a pie chart shows the distribution of sales across different pizza categories.
+This chart will provide insights into the popularity categories and thier contirbution to overall sales. */
