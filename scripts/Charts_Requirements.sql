@@ -9,3 +9,21 @@ DATENAME(WEEKDAY, order_date) AS day_of_the_week,
 COUNT(DISTINCT order_id) AS total_orders
 FROM pizza_sales
 GROUP BY DATENAME(WEEKDAY, order_date)
+
+/* 2.Hourly Trend for Total Orders: Create a line chart that illustrates the hourly trend of total orders throughout the day.
+This chart will allow us identify hours or periods of high order activity. */
+SELECT
+DATEPART(HOUR,order_time) AS order_hour,
+COUNT(DISTINCT order_id) AS total_orders
+FROM pizza_sales
+GROUP BY DATEPART(HOUR,order_time)
+ORDER BY order_hour
+
+/* 2.Monthly Trend for Total Orders: Create a line chart that displays the monthly trend of total orders over a specific time period.
+This chart will allow us to identify peak months of high order activity. */
+SELECT
+DATENAME(MONTH,order_date) AS order_month,
+COUNT(DISTINCT order_id) AS total_orders
+FROM pizza_sales
+GROUP BY DATENAME(MONTH,order_date)
+ORDER BY total_orders DESC
