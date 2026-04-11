@@ -29,8 +29,10 @@ track key metrics
 gain quick insights from the data
 
 ## Acknowledgements
-
-[![YouTube]([https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white](https://www.youtube.com/watch?v=V-s8c6jMRN0&t=1713s)
+This project was created based on a tutorial by Data Tutorials.
+Special thanks for sharing valuable knowledge for free.
+Tutorial link:
+https://www.youtube.com/watch?v=V-s8c6jMRN0&t=1713s
 📱Follow on Facebook - https://www.facebook.com/profile.php?...
 📱 Follow on LinkedIn -   / swapnjeet-s-58a673273  
 
